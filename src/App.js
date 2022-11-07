@@ -1,22 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import './scss/App.scss';
+import { List } from './components/list';
+import { useEffect, useRef, useState } from 'react';
 
 function App() {
+
+  const [ isClicked, setIsClicked ] = useState(false);
+  const container = useRef();
+
+  useEffect(() => {
+    if(!isClicked) {
+      container.current.click();
+      setIsClicked(true);
+    }
+  })
+
+
   return (
-    <div className="App">
+    <div className="App" ref={container}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <List/>
       </header>
     </div>
   );

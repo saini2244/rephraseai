@@ -1,0 +1,10 @@
+.list-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    column-gap: 10px;
+    row-gap: 10px;
+    width: calc(100vw - 2rem);
+    height: calc(100vh - 2rem);
+    padding: 1rem;
+}
